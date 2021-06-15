@@ -23,6 +23,11 @@
 		327B644C2678F76D004892AB /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B644B2678F76D004892AB /* ProductsResponse.swift */; };
 		327B644E2678F8C5004892AB /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B644D2678F8C5004892AB /* Products.swift */; };
 		327B6452267901CE004892AB /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B6451267901CE004892AB /* UIImageView+Extension.swift */; };
+		327B645926796A9F004892AB /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B645826796A9F004892AB /* Scene.swift */; };
+		327B645B26796AE8004892AB /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B645A26796AE8004892AB /* EventDetailsViewModel.swift */; };
+		327B645D26796B88004892AB /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B645C26796B88004892AB /* EventDetailsViewController.swift */; };
+		327B645F26796BD2004892AB /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B645E26796BD2004892AB /* SceneCoordinator.swift */; };
+		327B64612679702E004892AB /* SceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B64602679702E004892AB /* SceneViewController.swift */; };
 		82684B6B41B62BE5B12B0B26 /* Pods_goddess_goddessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A32C4DEFCA4376392EB88B /* Pods_goddess_goddessUITests.framework */; };
 		A136C547A66093E9CF3D0711 /* Pods_goddess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8952513F61DE0D7D83D45045 /* Pods_goddess.framework */; };
 		C1A495F8E6B1CCF79722DD9D /* Pods_goddessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A250BA52455206518F915FD9 /* Pods_goddessTests.framework */; };
@@ -71,6 +76,11 @@
 		327B644B2678F76D004892AB /* ProductsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
 		327B644D2678F8C5004892AB /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		327B6451267901CE004892AB /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		327B645826796A9F004892AB /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		327B645A26796AE8004892AB /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		327B645C26796B88004892AB /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		327B645E26796BD2004892AB /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		327B64602679702E004892AB /* SceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneViewController.swift; sourceTree = "<group>"; };
 		3494A0C9170BDB39C62F2E28 /* Pods-goddess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goddess.release.xcconfig"; path = "Target Support Files/Pods-goddess/Pods-goddess.release.xcconfig"; sourceTree = "<group>"; };
 		66619D00D76E6B209E2E70C1 /* Pods-goddessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goddessTests.release.xcconfig"; path = "Target Support Files/Pods-goddessTests/Pods-goddessTests.release.xcconfig"; sourceTree = "<group>"; };
 		8952513F61DE0D7D83D45045 /* Pods_goddess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goddess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				327B64472678F411004892AB /* EventListViewModel.swift */,
+				327B645A26796AE8004892AB /* EventDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				327B64122678C03E004892AB /* EventListViewController.swift */,
+				327B645C26796B88004892AB /* EventDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -229,6 +241,9 @@
 		327B6457267905D4004892AB /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				327B645826796A9F004892AB /* Scene.swift */,
+				327B645E26796BD2004892AB /* SceneCoordinator.swift */,
+				327B64602679702E004892AB /* SceneViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -496,14 +511,19 @@
 				327B643F2678C5FD004892AB /* EventTableViewCell.swift in Sources */,
 				327B644E2678F8C5004892AB /* Products.swift in Sources */,
 				327B64132678C03E004892AB /* EventListViewController.swift in Sources */,
+				327B64612679702E004892AB /* SceneViewController.swift in Sources */,
+				327B645F26796BD2004892AB /* SceneCoordinator.swift in Sources */,
 				327B64412678E261004892AB /* EventSection.swift in Sources */,
+				327B645926796A9F004892AB /* Scene.swift in Sources */,
 				327B640F2678C03E004892AB /* AppDelegate.swift in Sources */,
+				327B645D26796B88004892AB /* EventDetailsViewController.swift in Sources */,
 				327B644C2678F76D004892AB /* ProductsResponse.swift in Sources */,
 				327B6452267901CE004892AB /* UIImageView+Extension.swift in Sources */,
 				327B64112678C03E004892AB /* SceneDelegate.swift in Sources */,
 				327B644A2678F596004892AB /* ProductAPI.swift in Sources */,
 				327B64482678F411004892AB /* EventListViewModel.swift in Sources */,
 				327B64442678EF11004892AB /* Product.swift in Sources */,
+				327B645B26796AE8004892AB /* EventDetailsViewModel.swift in Sources */,
 				327B64462678EF78004892AB /* EventItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

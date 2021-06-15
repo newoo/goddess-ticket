@@ -17,7 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       return
     }
     
-    let navigationViewController = UINavigationController(rootViewController: EventListViewController())
+    let eventListViewController = EventListViewController()
+    SceneCoordinator.shared.setCurrentViewController(eventListViewController)
+    let navigationViewController
+      = UINavigationController(rootViewController: eventListViewController)
     
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene

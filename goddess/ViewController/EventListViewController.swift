@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 import SnapKit
 
-class EventListViewController: UIViewController {
+class EventListViewController: SceneViewController {
   private let tableView: UITableView = {
     let tableView = UITableView()
     tableView.rowHeight = UITableView.automaticDimension
@@ -37,6 +37,7 @@ class EventListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    navigationItem.title = "이벤트"
     setConstraints()
     bind()
   }
@@ -58,6 +59,11 @@ class EventListViewController: UIViewController {
     viewModel.eventSectionsSubject
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
+    
+    tableView.rx.itemSelected
+      .subscribe(onNext: { _ in
+        SceneCoordinator.shared.push(scene: .eventDetailsView(EventDetailsViewModel()))
+      }).disposed(by: disposeBag)
   }
 }
 

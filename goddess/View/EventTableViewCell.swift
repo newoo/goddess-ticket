@@ -63,7 +63,9 @@ class EventTableViewCell: UITableViewCell {
       displayNameLabel, nameLabel, commentLabel, priceLabel
     ]
     verticalStackView = UIStackView(arrangedSubviews: arrangedSubviews)
+    
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    selectionStyle = .none
     
     setConstraints()
     setStackView()
