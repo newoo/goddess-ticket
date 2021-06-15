@@ -12,8 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let navigationViewController = UINavigationController(rootViewController: EventListViewController())
+    
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = ListViewController()
+    window?.rootViewController = navigationViewController
     window?.makeKeyAndVisible()
     return true
   }

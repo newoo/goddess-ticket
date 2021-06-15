@@ -11,6 +11,7 @@ target 'goddess' do
   pod 'RxCocoa', '~> 5.1.1'
   pod 'Moya/RxSwift', '~> 14.0'
   pod 'RxDataSources', '~> 4.0'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'goddessTests' do
     inherit! :search_paths
