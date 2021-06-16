@@ -20,7 +20,7 @@ extension Scene {
       return viewController
       
     case let .eventDetailsView(viewModel):
-      let viewController = EventDetailsViewController()
+      let viewController = EventDetailsViewController(viewModel: viewModel)
       return viewController
     }
   }

@@ -7,7 +7,9 @@
 
 struct Product: Decodable { 
   let productCode: String
+  let locationName: String
   let displayName: String
+  let customerName: String
   let thumbnailImageUrl: String
   let price: Int
   let name: String
@@ -20,7 +22,7 @@ struct Product: Decodable {
   }
   
   enum CodingKeys: String, CodingKey {
-    case productCode, displayName, thumbnailImageUrl,
-         price, name, comment, currencyName
+    case productCode, locationName, displayName, customerName,
+         thumbnailImageUrl, price, name, comment, currencyName
   }
 }

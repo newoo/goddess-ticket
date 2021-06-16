@@ -31,9 +31,19 @@ class EventListViewController: SceneViewController {
       dataSource.sectionModels[index].type.headerTitle
     })
   
-  private let viewModel = EventListViewModel()
+  private let viewModel: EventListViewModel
   
   private var disposeBag = DisposeBag()
+  
+  init(viewModel: EventListViewModel = .init()) {
+    self.viewModel = viewModel
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    self.viewModel = .init()
+    super.init(nibName: nil, bundle: nil)
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,8 +71,12 @@ class EventListViewController: SceneViewController {
       .disposed(by: disposeBag)
     
     tableView.rx.itemSelected
-      .subscribe(onNext: { _ in
-        SceneCoordinator.shared.push(scene: .eventDetailsView(EventDetailsViewModel()))
+      .subscribe(onNext: { [weak self] indexPath in
+        guard let product = self?.dataSource.sectionModels[indexPath.section].items[indexPath.row].product else {
+          return
+        }
+        let eventDetailsViewModel = EventDetailsViewModel(product: product)
+        SceneCoordinator.shared.push(scene: .eventDetailsView(eventDetailsViewModel))
       }).disposed(by: disposeBag)
   }
 }
