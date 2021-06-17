@@ -12,6 +12,21 @@ import RxDataSources
 import SnapKit
 
 class EventListViewController: SceneViewController {
+  private let collectionView: UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .horizontal
+    layout.itemSize = CGSize(width: 168, height: 128)
+    layout.minimumLineSpacing = 16
+    
+    let collectionView = UICollectionView(frame: .zero,
+                                          collectionViewLayout: layout)
+    collectionView.backgroundColor = .white
+    collectionView.register(YeoshinTvCollectionViewCell.self,
+                            forCellWithReuseIdentifier: YeoshinTvCollectionViewCell.identifier)
+    
+    return collectionView
+  }()
+  
   private let tableView: UITableView = {
     let tableView = UITableView()
     tableView.rowHeight = UITableView.automaticDimension
@@ -66,7 +81,19 @@ class EventListViewController: SceneViewController {
   }
   
   private func bind() {
-    viewModel.eventSectionsSubject
+    viewModel.yeoshinTvsOutput
+      .do(onNext: { [weak self] in
+        self?.tableView.tableHeaderView = nil
+        self?.tableView.tableHeaderView = self?.createBannerHeaderView(with: $0)
+      })
+      .bind(to: collectionView.rx.items(
+        cellIdentifier: YeoshinTvCollectionViewCell.identifier,
+        cellType: YeoshinTvCollectionViewCell.self
+      )) { _, item, cell in
+        cell.itemInput.onNext(item)
+      }.disposed(by: disposeBag)
+    
+    viewModel.eventSectionsOutput
       .bind(to: tableView.rx.items(dataSource: dataSource))
       .disposed(by: disposeBag)
     
@@ -79,5 +106,20 @@ class EventListViewController: SceneViewController {
         SceneCoordinator.shared.push(scene: .eventDetailsView(eventDetailsViewModel))
       }).disposed(by: disposeBag)
   }
+  
+  private func createBannerHeaderView(with banner: [YeoshinTv]) -> UIView {
+    let width = UIScreen.main.bounds.size.width
+    let height: CGFloat = 150
+    
+    let headerView = UIView(frame: CGRect(x: 0,
+                                          y: 0,
+                                          width: width,
+                                          height: height))
+    headerView.addSubview(collectionView)
+    collectionView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+    }
+    
+    return headerView
+  }
 }
-

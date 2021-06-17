@@ -6,10 +6,11 @@
 //
 
 struct Products: Decodable {
+  let yeoshinTv: [YeoshinTv]
   let recommendProducts: [Product]
   let newProducts: [Product]
   
   enum CodingKeys: String, CodingKey {
-    case recommendProducts, newProducts
+    case yeoshinTv, recommendProducts, newProducts
   }
 }

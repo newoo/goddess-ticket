@@ -10,7 +10,8 @@ import RxCocoa
 import Moya
 
 final class EventListViewModel {
-  let eventSectionsSubject = BehaviorSubject<[EventSection]>(value: [])
+  let eventSectionsOutput = BehaviorSubject<[EventSection]>(value: [])
+  let yeoshinTvsOutput = BehaviorSubject<[YeoshinTv]>(value: [])
   
   private var disposeBag = DisposeBag()
   
@@ -23,14 +24,16 @@ final class EventListViewModel {
     
     productProvider.rx.request(.fetchList)
       .map(ProductsResponse.self)
-      .map { response -> [EventSection] in
+      .asObservable()
+      .subscribe(onNext: { [weak self] response in
+        let yeoshinTvs = response.results.yeoshinTv
         let recommendItems = response.results.recommendProducts.map { EventItem(product: $0) }
         let newItems = response.results.newProducts.map { EventItem(product: $0) }
         
-        return [EventSection(type: .recommend, items: recommendItems),
-        EventSection(type: .new, items: newItems)]
-      }.asObservable()
-      .bind(to: eventSectionsSubject)
-      .disposed(by: disposeBag)
+        self?.yeoshinTvsOutput.onNext(yeoshinTvs)
+        self?.eventSectionsOutput.onNext([EventSection(type: .recommend, items: recommendItems),
+                                          EventSection(type: .new, items: newItems)])
+        
+      }).disposed(by: disposeBag)
   }
 }

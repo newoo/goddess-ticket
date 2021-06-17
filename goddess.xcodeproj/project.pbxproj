@@ -37,6 +37,8 @@
 		327B646F2679BA9A004892AB /* EventImagePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B646E2679BA9A004892AB /* EventImagePresentable.swift */; };
 		327B64722679BADD004892AB /* EventContentsPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B64712679BADD004892AB /* EventContentsPresentable.swift */; };
 		327B64742679BED8004892AB /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327B64732679BED8004892AB /* Int+Extension.swift */; };
+		32D6A177267ABE41002E681E /* YeoshinTvCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6A176267ABE41002E681E /* YeoshinTvCollectionViewCell.swift */; };
+		32D6A179267AC275002E681E /* YeoshinTv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6A178267AC275002E681E /* YeoshinTv.swift */; };
 		82684B6B41B62BE5B12B0B26 /* Pods_goddess_goddessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A32C4DEFCA4376392EB88B /* Pods_goddess_goddessUITests.framework */; };
 		A136C547A66093E9CF3D0711 /* Pods_goddess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8952513F61DE0D7D83D45045 /* Pods_goddess.framework */; };
 		C1A495F8E6B1CCF79722DD9D /* Pods_goddessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A250BA52455206518F915FD9 /* Pods_goddessTests.framework */; };
@@ -99,6 +101,8 @@
 		327B646E2679BA9A004892AB /* EventImagePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventImagePresentable.swift; sourceTree = "<group>"; };
 		327B64712679BADD004892AB /* EventContentsPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentsPresentable.swift; sourceTree = "<group>"; };
 		327B64732679BED8004892AB /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		32D6A176267ABE41002E681E /* YeoshinTvCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTvCollectionViewCell.swift; sourceTree = "<group>"; };
+		32D6A178267AC275002E681E /* YeoshinTv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeoshinTv.swift; sourceTree = "<group>"; };
 		3494A0C9170BDB39C62F2E28 /* Pods-goddess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goddess.release.xcconfig"; path = "Target Support Files/Pods-goddess/Pods-goddess.release.xcconfig"; sourceTree = "<group>"; };
 		66619D00D76E6B209E2E70C1 /* Pods-goddessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goddessTests.release.xcconfig"; path = "Target Support Files/Pods-goddessTests/Pods-goddessTests.release.xcconfig"; sourceTree = "<group>"; };
 		8952513F61DE0D7D83D45045 /* Pods_goddess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goddess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				327B64702679BABF004892AB /* Protocol */,
+				32D6A178267AC275002E681E /* YeoshinTv.swift */,
 				327B64432678EF11004892AB /* Product.swift */,
 				327B644D2678F8C5004892AB /* Products.swift */,
 				327B644B2678F76D004892AB /* ProductsResponse.swift */,
@@ -215,6 +220,7 @@
 				327B646226797FBE004892AB /* EventImageTableViewCell.swift */,
 				327B646426798063004892AB /* EventPlaceTableViewCell.swift */,
 				327B646626798109004892AB /* EventContentsTableViewCell.swift */,
+				32D6A176267ABE41002E681E /* YeoshinTvCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				327B643F2678C5FD004892AB /* EventTableViewCell.swift in Sources */,
+				32D6A177267ABE41002E681E /* YeoshinTvCollectionViewCell.swift in Sources */,
 				327B644E2678F8C5004892AB /* Products.swift in Sources */,
 				327B64132678C03E004892AB /* EventListViewController.swift in Sources */,
 				327B646326797FBE004892AB /* EventImageTableViewCell.swift in Sources */,
@@ -561,6 +568,7 @@
 				327B646D2679B987004892AB /* EventPlacePresentable.swift in Sources */,
 				327B64722679BADD004892AB /* EventContentsPresentable.swift in Sources */,
 				327B644C2678F76D004892AB /* ProductsResponse.swift in Sources */,
+				32D6A179267AC275002E681E /* YeoshinTv.swift in Sources */,
 				327B646F2679BA9A004892AB /* EventImagePresentable.swift in Sources */,
 				327B6452267901CE004892AB /* UIImageView+Extension.swift in Sources */,
 				327B64112678C03E004892AB /* SceneDelegate.swift in Sources */,
